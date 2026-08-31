@@ -1,0 +1,6 @@
+200 ok 
+201 created
+
+400 range
+400 error
+404 - page not found
