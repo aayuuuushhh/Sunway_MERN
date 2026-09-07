@@ -3,6 +3,10 @@ import About from './component/About'
 import Sum from './component/Sum'
 import Form from './component/Form'
 import ProductForm from './component/ProductForm'
+import Navbar from './NavBar'
+import NavRoute from '../NavRoute'
+import LearnUseState from './LearnUseState'
+
 
 const App = () => {
   const name = "Aayush"
@@ -19,6 +23,9 @@ const App = () => {
       <About/>
       <Sum />  */}
       {/* <Form/> */}
+      <Navbar/>
+      <NavRoute/>
+      <LearnUseState/>
       <ProductForm/>
     </div>
   )
