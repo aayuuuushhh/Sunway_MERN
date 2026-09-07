@@ -8,17 +8,17 @@ import nodemailer from "nodemailer";
 //transporterInof gives form information while mailInof gives to info
 let transporterInfo = {
   // host: emailHost,
-  host: "smtp.gmail.com",
+  host: process.env.EMAIL_HOST,
   // if from is gmail use gmail smtp
-  port: 587,
+  port: Number(process.env.EMAIL_PORT),
   secure: false,
 
   //   auth user and pass play the role from
   auth: {
     // note user and pass most be genuine
     //it is the email through which email is send
-    user: "aayushshahnirala@gmail.com",
-    pass: "vdqr fkyz nydk yado",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
     // to send email form server first you have to =>
     //use 2-step verification and generate app password
     //instead of using your password use app password of gmail

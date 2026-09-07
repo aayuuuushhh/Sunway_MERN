@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import firstRouter from "./src/routes/firstRoute.js";
 import nameRouter from "./src/routes/nameRouter.js";
@@ -12,8 +13,10 @@ import addressRoute from "./src/routes/addressRoute.js";
 let app = express();
 
 
-app.listen(8000, async () => {
-  console.log("Port is running at 8000");
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, async () => {
+  console.log(`Port is running at ${PORT}`);
   await connectToDb();
 });
 
