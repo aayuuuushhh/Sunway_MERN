@@ -9,7 +9,7 @@ const ReadSpecific = () => {
   const id = params.id;
   const getDate = async () => {
     const data = await axios({
-      url: `http://localhost:8000/product/${idq}`,
+      url: `http://localhost:8000/product/${id}`,
       method: "GET",
     });
     setProduct(data.data.result);

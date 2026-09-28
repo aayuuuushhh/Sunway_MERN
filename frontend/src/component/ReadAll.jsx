@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const ReadAll = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+
   const getData = async () => {
     const data = await axios({
       url: "http://localhost:8000/product",
@@ -13,6 +14,7 @@ const ReadAll = () => {
     });
     setProducts(data.data.result);
   };
+
   useEffect(() => {
     getData();
   }, []);
@@ -22,7 +24,10 @@ const ReadAll = () => {
       navigate(`/readSpecific/${_id}`);
     };
   };
-  // getData();
+
+  const handleUpdate = (_id) => {
+    navigate(`/update/${_id}`);
+  };
 
   return (
     <div>
@@ -34,7 +39,12 @@ const ReadAll = () => {
               {value.price}
             </p>
             <button onClick={handleView(value._id)}>View</button>
-            <button style={{ marginLeft: "10px" }}>Update</button>
+            <button
+              style={{ marginLeft: "10px" }}
+              onClick={() => handleUpdate(value._id)}
+            >
+              Update
+            </button>
           </div>
         );
       })}
